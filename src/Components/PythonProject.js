@@ -5,10 +5,9 @@ function PythonProject() {
     const [pyProjects, setWebProjects] = useState();
     // console.log(data);
     useEffect(() => {
-        fetch("/server/python")
+        fetch(process.env.HOST + "/server/python")
           .then((res) => res.json())
           .then((data) => {
-            console.log("This is data", data.projects);
             setWebProjects(data.projects)
           });
       }, []);

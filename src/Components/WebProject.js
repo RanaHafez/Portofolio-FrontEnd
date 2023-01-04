@@ -5,10 +5,9 @@ function WebProject(){
     const [webProjects, setWebProjects] = useState();
     // console.log(data);
     useEffect(() => {
-        fetch("/server/web")
+        fetch(process.env.HOST + "/server/web")
           .then((res) => res.json())
           .then((data) => {
-            console.log("This is data", data.projects);
             setWebProjects(data.projects)
           });
       }, []);
