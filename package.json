@@ -27,7 +27,6 @@
       "react-app/jest"
     ]
   },
-  "proxy": "https://portofolio-api.onrender.com",
   "browserslist": {
     "production": [
       ">0.2%",
