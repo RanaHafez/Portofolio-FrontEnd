@@ -4,7 +4,7 @@ import React, { useState, useEffect } from 'react';
 function WebProject(){
     const [webProjects, setWebProjects] = useState();
     // console.log(data);
-    const url = "https://portofolio-api.onrender.com/api/web";
+    const url = "https://portofolio-api.onrender.com/server/server/web";
     useEffect(() => {
         fetch(url)
           .then((res) => res.json())
