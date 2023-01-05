@@ -4,7 +4,7 @@ import React, { useState, useEffect } from 'react';
 function AppProject () {
     const [appProjects, setWebProjects] = useState();
     useEffect(() => {
-        fetch(process.env.HOST+"/server/app")
+        fetch("/server/app")
           .then((res) => res.json())
           .then((data) => {
             setWebProjects(data.projects)
