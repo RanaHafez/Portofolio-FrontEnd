@@ -5,7 +5,7 @@ function WebProject(){
     const [webProjects, setWebProjects] = useState();
     // console.log(data);
     useEffect(() => {
-        fetch("/server/web")
+        fetch("/server/server/web")
           .then((res) => res.json())
           .then((data) => {
             setWebProjects(data.projects)
