@@ -1,16 +1,28 @@
 import React, { useState, useEffect } from 'react';
 // import ReactDOM from 'react-dom/client';
+import Axios from "axios";
 
 function AppProject () {
-    const [appProjects, setWebProjects] = useState();
-    const url = "https://portofolio-api.onrender.com/server/app"
+    const [appProjects, setAppProjects] = useState();
+    const url = "https://portofolio-api.onrender.com/server/app";
     useEffect(() => {
-        fetch(url)
-          .then((res) => res.json())
-          .then((data) => {
-            console.log(url);
-            setWebProjects(data.projects);
+        Axios.get(url).then((res) => {
+            console.log("Insode the then function");
+            setAppProjects(res.data.projects);
+        }).catch(function (error) {
+            console.log("Insode the catch function");
+            if (error.response) {
+              console.log(error.response.data);
+              console.log(error.response.status);
+              console.log(error.response.headers);
+            }
           });
+        // fetch("https://portofolio-api.onrender.com/server/app")
+        //   .then((res) => res.json())
+        //   .then((data) => {
+        //     console.log(url);
+        //     setWebProjects(data.projects);
+        //   });
       }, []);
 
       const listItems = appProjects?.map(appProject => (

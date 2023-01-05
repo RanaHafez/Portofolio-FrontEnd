@@ -1,16 +1,28 @@
 import React, { useState, useEffect } from 'react';
 // import '../App.css';
+import Axios from "axios";
 
 function WebProject(){
-    const [webProjects, setWebProjects] = useState();
-    // console.log(data);
-    const url = "https://portofolio-api.onrender.com/server/server/web";
+    const [webProjects, setAppProjects] = useState();
+    const url = "https://portofolio-api.onrender.com/server/web";
     useEffect(() => {
-        fetch(url)
-          .then((res) => res.json())
-          .then((data) => {
-            setWebProjects(data.projects)
+        Axios.get(url).then((res) => {
+            console.log("Insode the then function");
+            setAppProjects(res.data.projects);
+        }).catch(function (error) {
+            console.log("Insode the catch function");
+            if (error.response) {
+              console.log(error.response.data);
+              console.log(error.response.status);
+              console.log(error.response.headers);
+            }
           });
+        // fetch("https://portofolio-api.onrender.com/server/app")
+        //   .then((res) => res.json())
+        //   .then((data) => {
+        //     console.log(url);
+        //     setWebProjects(data.projects);
+        //   });
       }, []);
 
     const listItems = webProjects?.map(webProject => (
