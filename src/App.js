@@ -26,6 +26,7 @@ function App() {
       break;
 
       case "/app":
+        console.log("Appp");
         component = <AppProject />;
         break;
 

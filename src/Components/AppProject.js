@@ -9,7 +9,7 @@ function AppProject () {
           .then((res) => res.json())
           .then((data) => {
             console.log(url);
-            setWebProjects(data.projects)
+            setWebProjects(data.projects);
           });
       }, []);
 
