@@ -3,8 +3,9 @@ import React, { useState, useEffect } from 'react';
 
 function AppProject () {
     const [appProjects, setWebProjects] = useState();
+    const url = "https://portofolio-api.onrender.com/server/app"
     useEffect(() => {
-        fetch("/server/app")
+        fetch(url)
           .then((res) => res.json())
           .then((data) => {
             setWebProjects(data.projects)
