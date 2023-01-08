@@ -12,10 +12,10 @@ function NavBar() {
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="ms-auto">
-              <Link to='/'>About</Link>
-              <Link to="/app">App</Link>
-              <Link to="/python">Python</Link>
-              <Link to="/web">Web</Link>
+              <Nav.Link as={Link} to='/'>About</Nav.Link>
+              <Nav.Link as={Link} to="/app">App</Nav.Link>
+              <Nav.Link as={Link} to="/python">Python</Nav.Link>
+              <Nav.Link as={Link} to="/web">Web</Nav.Link>
             </Nav>
           </Navbar.Collapse>
        </Container>
