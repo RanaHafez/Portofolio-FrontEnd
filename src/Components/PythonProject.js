@@ -4,7 +4,7 @@ import Axios from "axios";
 
 function PythonProject() {
     const [pyProjects, setPythonProjects] = useState();
-    const url = "https://portofolio-api.onrender.com/server/app";
+    const url = "https://portofolio-api.onrender.com/server/python";
     useEffect(() => {
         Axios.get(url).then((res) => {
             console.log("Insode the then function");
@@ -43,7 +43,7 @@ function PythonProject() {
 
     return (
         <div className="main-body">
-            <h1>App Project</h1>
+            <h1>Python Projects</h1>
             {!pyProjects? "Is Loading .. ":  <div className="row align-items-start">
             {listItems}
         </div>}

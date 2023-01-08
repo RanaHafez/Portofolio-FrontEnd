@@ -9,36 +9,42 @@ import Home from './Components/Home';
 import Footer from './Components/Footer';
 import PythonProject from './Components/PythonProject';
 import 'bootstrap/dist/css/bootstrap.min.css';
-// import {Route, Routes} from "react-router-dom";
+import {Route, Routes} from "react-router-dom";
 
 function App() {
-  let component
+  // let component
 
-  switch (window.location.pathname){
-    case "/":
-      component =<Home />;
-      break;
-    case "/python":
-      component = <PythonProject />;
-      break;
-    case "/web":
-      component = <WebProject />;
-      break;
+  // switch (window.location.pathname){
+  //   case "/":
+  //     component =<Home />;
+  //     break;
+  //   case "/python":
+  //     component = <PythonProject />;
+  //     break;
+  //   case "/web":
+  //     component = <WebProject />;
+  //     break;
 
-      case "/app":
-        console.log("Appp");
-        component = <AppProject />;
-        break;
+  //     case "/app":
+  //       console.log("Appp");
+  //       component = <AppProject />;
+  //       break;
 
-      default:
-        component = <Home />
-        break;
-  }
+  //     default:
+  //       component = <Home />
+  //       break;
+  // }
   
   return (
     <div>
     <NavBar />
-    {component}
+    <Routes>
+      <Route path="/" element={<Home />}></Route>
+      <Route path="/app" element={<AppProject />}></Route>
+      <Route path="/python" element={<PythonProject />}></Route>
+      <Route path="/web" element={<WebProject />}></Route>
+    </Routes>
+    {/* {component} */}
     <Footer />
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
